@@ -7,10 +7,22 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        md: "2rem",
+      },
       screens: {
         "2xl": "1400px",
       },
+    },
+    screens: {
+      xs: "320px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
     extend: {
       fontFamily: {
@@ -132,7 +144,45 @@ export default {
         "pulse-slow": "pulse-slow 2s ease-in-out infinite",
         "shimmer": "shimmer 2s linear infinite",
       },
+      spacing: {
+        "section-padding": {
+          DEFAULT: "2rem",
+          sm: "3rem",
+          md: "4rem",
+          lg: "6rem",
+        },
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function({ addComponents, theme }: any) {
+      addComponents({
+        ".section-padding": {
+          "@apply px-4 py-12 sm:py-16 md:py-20 lg:py-24": {},
+        },
+        ".card-hover": {
+          "@apply hover:shadow-lg hover:scale-105 transition-all duration-300": {},
+        },
+        ".btn-gold": {
+          "@apply px-6 py-3 bg-gold text-navy-dark font-bold rounded-lg hover:shadow-lg transition-all duration-300": {},
+        },
+        ".glass": {
+          "@apply backdrop-blur-md bg-white/10 border border-white/20": {},
+        },
+        ".glass-dark": {
+          "@apply backdrop-blur-md bg-black/40 border border-white/10": {},
+        },
+        ".text-gradient-gold": {
+          "@apply bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent": {},
+        },
+        ".shadow-soft": {
+          "@apply shadow-sm": {},
+        },
+        ".shadow-elevated": {
+          "@apply shadow-2xl": {},
+        },
+      });
+    },
+  ],
 } satisfies Config;

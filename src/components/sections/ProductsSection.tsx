@@ -96,36 +96,36 @@ export function ProductsSection() {
   return (
     <section id="products" className="section-padding bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
-          <span className="text-gold font-medium uppercase tracking-wider text-sm">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <span className="text-gold font-medium uppercase tracking-wider text-xs sm:text-sm">
             Our Expertise
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-navy-dark mt-2 mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-dark mt-2 mb-3 sm:mb-4">
             Product Categories
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             We handle all major product categories from trusted manufacturers
           </p>
         </div>
 
-        {/* ✅ 2 cards per row on mobile */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        {/* ✅ 2 cards per row on mobile, 3 on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
           {categories.map((category, index) => (
             <div
               key={index}
               onClick={() => setSelectedCategory(category)}
-              className="group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm card-hover"
+              className="group cursor-pointer overflow-hidden rounded-xl sm:rounded-2xl bg-white shadow-sm card-hover"
             >
-              <div className="relative h-32 md:h-48 overflow-hidden">
+              <div className="relative h-24 sm:h-32 md:h-48 overflow-hidden">
                 <img
                   src={category.image}
                   alt={category.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
-                  <h3 className="font-heading font-bold text-sm md:text-xl text-white flex items-center gap-2">
-                    <Package className="w-4 h-4 md:w-5 md:h-5 text-gold" />
+                <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-6">
+                  <h3 className="font-heading font-bold text-xs sm:text-sm md:text-xl text-white flex items-center gap-1 sm:gap-2 line-clamp-2">
+                    <Package className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gold shrink-0" />
                     {category.name}
                   </h3>
                 </div>
@@ -137,13 +137,13 @@ export function ProductsSection() {
 
       {/* Modal */}
       {selectedCategory && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 sm:p-4">
           <div
             className="absolute inset-0 bg-navy-dark/80 backdrop-blur-sm"
             onClick={() => setSelectedCategory(null)}
           />
-          <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden animate-scale-in">
-            <div className="relative h-64">
+          <div className="relative w-full max-w-2xl bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden animate-scale-in max-h-[90vh] sm:max-h-[85vh] flex flex-col">
+            <div className="relative h-40 sm:h-48 md:h-64 flex-shrink-0">
               <img
                 src={selectedCategory.image}
                 alt={selectedCategory.name}
@@ -152,38 +152,38 @@ export function ProductsSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 to-transparent" />
               <button
                 onClick={() => setSelectedCategory(null)}
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/40 transition-colors"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/40 transition-colors"
               >
                 <X className="w-5 h-5 text-white" />
               </button>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-heading font-bold text-3xl text-white">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                <h3 className="font-heading font-bold text-xl sm:text-2xl md:text-3xl text-white">
                   {selectedCategory.name}
                 </h3>
               </div>
             </div>
 
-            <div className="p-6">
-              <p className="text-muted-foreground mb-6">
+            <div className="overflow-y-auto flex-1 p-4 sm:p-6">
+              <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
                 {selectedCategory.description}
               </p>
 
-              <h4 className="font-heading font-bold text-navy-dark mb-4">
+              <h4 className="font-heading font-bold text-navy-dark mb-3 sm:mb-4 text-sm sm:text-base">
                 Popular Products:
               </h4>
 
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                 {selectedCategory.products.map((product, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-muted rounded-full text-sm font-medium text-navy"
+                    className="px-3 py-1.5 sm:px-4 sm:py-2 bg-muted rounded-full text-xs sm:text-sm font-medium text-navy"
                   >
                     {product}
                   </span>
                 ))}
               </div>
 
-              <Button onClick={scrollToContact} className="w-full btn-gold">
+              <Button onClick={scrollToContact} className="w-full btn-gold text-sm sm:text-base py-2.5 sm:py-3">
                 Request Quote for {selectedCategory.name}
               </Button>
             </div>

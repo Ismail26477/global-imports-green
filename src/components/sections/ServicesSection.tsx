@@ -90,32 +90,32 @@ export function ServicesSection() {
     <section id="services" className="section-padding">
       <div className="container mx-auto px-4">
         {/* Services Heading */}
-        <div className="text-center mb-12 md:mb-16">
-          <span className="text-gold font-medium uppercase tracking-wider text-sm">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <span className="text-gold font-medium uppercase tracking-wider text-xs sm:text-sm">
             Our Services
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-navy-dark mt-2 mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-dark mt-2 mb-3 sm:mb-4">
             Comprehensive Trade Solutions
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             End-to-end import-export services tailored for your business needs
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-20">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8 mb-12 sm:mb-16 md:mb-20">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl p-4 md:p-8 shadow-sm card-hover border border-border"
+              className="group bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-8 shadow-sm card-hover border border-border transition-all duration-300"
             >
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-navy to-navy-light flex items-center justify-center mb-4 md:mb-6 group-hover:from-gold group-hover:to-gold-dark transition-all duration-300">
-                <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-navy to-navy-light flex items-center justify-center mb-3 sm:mb-4 md:mb-6 group-hover:from-gold group-hover:to-gold-dark transition-all duration-300">
+                <service.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
               </div>
-              <h3 className="font-heading font-bold text-base md:text-xl text-navy-dark mb-2 md:mb-3">
+              <h3 className="font-heading font-bold text-sm sm:text-base md:text-xl text-navy-dark mb-2 md:mb-3 line-clamp-2">
                 {service.title}
               </h3>
-              <p className="text-xs md:text-base text-muted-foreground leading-snug">
+              <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-snug line-clamp-3">
                 {service.description}
               </p>
             </div>
@@ -123,33 +123,33 @@ export function ServicesSection() {
         </div>
 
         {/* Why Choose Us Heading */}
-        <div className="text-center mb-12 md:mb-16">
-          <span className="text-gold font-medium uppercase tracking-wider text-sm">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <span className="text-gold font-medium uppercase tracking-wider text-xs sm:text-sm">
             Why Choose Us
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-navy-dark mt-2 mb-4">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-dark mt-2 mb-3 sm:mb-4">
             Your Success, Our Priority
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             Reduce risk, save time, and improve profitability with our expertise
           </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="flex gap-3 p-4 md:p-6 bg-muted/30 rounded-xl card-hover"
+              className="flex gap-2 sm:gap-3 p-3 sm:p-4 md:p-6 bg-muted/30 rounded-lg sm:rounded-xl card-hover transition-all duration-300"
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                <benefit.icon className="w-5 h-5 md:w-6 md:h-6 text-gold" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
+                <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gold" />
               </div>
-              <div>
-                <h3 className="font-heading font-bold text-sm md:text-base text-navy-dark mb-1 md:mb-2">
+              <div className="min-w-0">
+                <h3 className="font-heading font-bold text-xs sm:text-sm md:text-base text-navy-dark mb-0.5 sm:mb-1 md:mb-2 line-clamp-2">
                   {benefit.title}
                 </h3>
-                <p className="text-xs md:text-sm text-muted-foreground leading-snug">
+                <p className="text-xs sm:text-xs md:text-sm text-muted-foreground leading-snug line-clamp-2">
                   {benefit.description}
                 </p>
               </div>

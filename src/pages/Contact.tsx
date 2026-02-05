@@ -75,38 +75,38 @@ export default function Contact() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-navy via-navy-dark to-navy-light relative overflow-hidden">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-24 bg-gradient-to-br from-navy via-navy-dark to-navy-light relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 to-navy-dark/80" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 mb-4">
-              <Sparkles className="w-5 h-5 text-gold" />
-              <span className="text-gold font-medium uppercase tracking-wider text-sm">Contact Us</span>
+            <div className="flex items-center gap-2 mb-3 sm:mb-4">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
+              <span className="text-gold font-medium uppercase tracking-wider text-xs sm:text-sm">Contact Us</span>
             </div>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-3 sm:mb-4 md:mb-6">
               Get in <span className="text-gradient-gold">Touch</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 mb-6 sm:mb-8 leading-relaxed">
               Have questions about our services? Ready to start your global trade journey? 
               Our team is here to help you every step of the way.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="https://wa.me/919270109911"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold inline-flex items-center gap-2"
+                className="btn-gold inline-flex items-center justify-center sm:justify-start gap-2 px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                 Chat on WhatsApp
               </a>
               <a
                 href="tel:+919270109911"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold border-2 border-white/20 text-white hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                 Call Us Now
               </a>
             </div>
@@ -115,36 +115,36 @@ export default function Contact() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 sm:py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
             {/* Contact Info */}
             <div>
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-navy-dark mb-8">
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl text-navy-dark mb-6 sm:mb-8">
                 Contact <span className="text-gradient-gold">Information</span>
               </h2>
 
-              <div className="space-y-4 mb-10">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4 mb-8 sm:mb-10">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-soft border border-border card-hover">
+                  <div key={index} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-lg sm:rounded-xl shadow-soft border border-border card-hover transition-all duration-300">
                     {info.href ? (
-                      <a href={info.href} className="flex items-center gap-4 w-full group">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/10 to-cyan/10 flex items-center justify-center group-hover:from-gold/20 group-hover:to-cyan/20 transition-all duration-300">
-                          <info.icon className="w-6 h-6 text-gold" />
+                      <a href={info.href} className="flex items-center gap-3 sm:gap-4 w-full group">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-gold/10 to-cyan/10 flex items-center justify-center group-hover:from-gold/20 group-hover:to-cyan/20 transition-all duration-300 shrink-0">
+                          <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold" />
                         </div>
-                        <div>
-                          <p className="text-sm text-muted-foreground">{info.label}</p>
-                          <p className="font-medium text-navy-dark">{info.value}</p>
+                        <div className="min-w-0">
+                          <p className="text-xs sm:text-sm text-muted-foreground">{info.label}</p>
+                          <p className="font-medium text-navy-dark text-sm sm:text-base truncate">{info.value}</p>
                         </div>
                       </a>
                     ) : (
                       <>
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/10 to-cyan/10 flex items-center justify-center">
-                          <info.icon className="w-6 h-6 text-gold" />
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-gold/10 to-cyan/10 flex items-center justify-center shrink-0">
+                          <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold" />
                         </div>
-                        <div>
-                          <p className="text-sm text-muted-foreground">{info.label}</p>
-                          <p className="font-medium text-navy-dark">{info.value}</p>
+                        <div className="min-w-0">
+                          <p className="text-xs sm:text-sm text-muted-foreground">{info.label}</p>
+                          <p className="font-medium text-navy-dark text-sm sm:text-base">{info.value}</p>
                         </div>
                       </>
                     )}
@@ -153,24 +153,24 @@ export default function Contact() {
               </div>
 
               {/* Team Contacts */}
-              <h3 className="font-heading font-bold text-xl text-navy-dark mb-4 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-gold" />
+              <h3 className="font-heading font-bold text-base sm:text-lg md:text-xl text-navy-dark mb-4 sm:mb-5 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-gold shrink-0" />
                 Contact Our Team Directly
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                 {teamMembers.map((member, index) => (
                   <a
                     key={index}
                     href={`tel:${member.phone.replace(/\s/g, "")}`}
-                    className="flex items-center gap-3 p-4 bg-white rounded-xl shadow-soft card-hover border border-transparent hover:border-gold/20 group"
+                    className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 md:p-4 bg-white rounded-lg sm:rounded-xl shadow-soft card-hover border border-transparent hover:border-gold/20 group transition-all duration-300"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-navy to-navy-light flex items-center justify-center text-white font-bold group-hover:from-gold group-hover:to-gold-dark group-hover:text-navy-dark transition-all duration-300">
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-navy to-navy-light flex items-center justify-center text-white text-xs sm:text-sm md:text-base font-bold group-hover:from-gold group-hover:to-gold-dark group-hover:text-navy-dark transition-all duration-300 shrink-0">
                       {member.initials}
                     </div>
-                    <div>
-                      <p className="font-medium text-navy-dark text-sm">{member.name}</p>
-                      <p className="text-xs text-muted-foreground">{member.role}</p>
-                      <p className="text-xs text-gold">{member.phone}</p>
+                    <div className="min-w-0">
+                      <p className="font-medium text-navy-dark text-xs sm:text-sm line-clamp-1">{member.name}</p>
+                      <p className="text-xs text-muted-foreground line-clamp-1">{member.role}</p>
+                      <p className="text-xs text-gold line-clamp-1">{member.phone}</p>
                     </div>
                   </a>
                 ))}
@@ -178,27 +178,27 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-3xl shadow-elevated p-6 md:p-8 border border-border">
-              <h3 className="font-heading font-bold text-2xl text-navy-dark mb-6 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-gold" />
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-elevated p-4 sm:p-6 md:p-8 border border-border">
+              <h3 className="font-heading font-bold text-lg sm:text-2xl text-navy-dark mb-4 sm:mb-6 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
                 Send Us an Enquiry
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name" className="text-xs sm:text-sm">Full Name *</Label>
                     <Input
                       id="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your name"
                       required
-                      className="mt-1.5 rounded-xl"
+                      className="mt-1.5 sm:mt-2 rounded-lg sm:rounded-xl text-sm"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email *</Label>
+                    <Label htmlFor="email" className="text-xs sm:text-sm">Email *</Label>
                     <Input
                       id="email"
                       type="email"
@@ -206,42 +206,42 @@ export default function Contact() {
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="your@email.com"
                       required
-                      className="mt-1.5 rounded-xl"
+                      className="mt-1.5 sm:mt-2 rounded-lg sm:rounded-xl text-sm"
                     />
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-xs sm:text-sm">Phone Number</Label>
                     <Input
                       id="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 XXXXX XXXXX"
-                      className="mt-1.5 rounded-xl"
+                      className="mt-1.5 sm:mt-2 rounded-lg sm:rounded-xl text-sm"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="company">Company Name</Label>
+                    <Label htmlFor="company" className="text-xs sm:text-sm">Company Name</Label>
                     <Input
                       id="company"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="Your company"
-                      className="mt-1.5 rounded-xl"
+                      className="mt-1.5 sm:mt-2 rounded-lg sm:rounded-xl text-sm"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <Label htmlFor="category">Product Category</Label>
+                  <Label htmlFor="category" className="text-xs sm:text-sm">Product Category</Label>
                   <Select
                     value={formData.category}
                     onValueChange={(value) => setFormData({ ...formData, category: value })}
                   >
-                    <SelectTrigger id="category" className="mt-1.5 rounded-xl">
+                    <SelectTrigger id="category" className="mt-1.5 sm:mt-2 rounded-lg sm:rounded-xl text-sm">
                       <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                     <SelectContent>
@@ -255,22 +255,22 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Your Message *</Label>
+                  <Label htmlFor="message" className="text-xs sm:text-sm">Your Message *</Label>
                   <Textarea
                     id="message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us about your requirements, the products you're looking for, estimated quantities, etc."
-                    rows={5}
+                    rows={4}
                     required
-                    className="mt-1.5 rounded-xl resize-none"
+                    className="mt-1.5 sm:mt-2 rounded-lg sm:rounded-xl resize-none text-sm"
                   />
                 </div>
 
-                <Button type="submit" className="w-full btn-gold group">
-                  <Send className="w-5 h-5 mr-2" />
+                <Button type="submit" className="w-full btn-gold group py-2 sm:py-3 text-sm sm:text-base">
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   <span>Send Enquiry</span>
-                  <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                 </Button>
               </form>
             </div>
